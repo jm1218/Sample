@@ -1,0 +1,28 @@
+<!--header-->
+<div content-for="title">
+	<a ng-href="#/">방등록</a>
+</div>
+<div content-for="leftNavBtn">
+	<a href="" class="icon-back" ng-back></a>
+</div>
+<div content-for="rightNavBtn">
+	<a ng-href="#/registerRoom/addRoomInfo" class="icon-add"></a>
+</div>
+<!--content-->
+<div class="container" ng-controller="AddedRoomListCtrl">
+	<div class="cont-wrap scrollable">
+		<ul class="list scrollable-content">
+			<li ng-repeat="a in [1,2,3,4,5,6,7,8,9,10]">
+				<a ng-href="">
+					<div class="img-area"><img src="res/img/thumbnail/thumb-02.jpg"/><span class="bg-p">거래완료</span></div>
+					<div class="txt-area">
+						<p class="pyeong"><span class="">2,000/35</span> 3층</p>
+						<p class="info">서초구 양재1동, 원룸(오픈형), 다세대 건물</p>
+						<p class="space">양재역 도보 3분거리입니다.</p>
+						<div class="room-type"><span class="circle-red">월</span><span class="circle-blue">전</span></div>
+					</div>
+				</a>
+			</li>
+		</ul>
+	</div>
+</div>

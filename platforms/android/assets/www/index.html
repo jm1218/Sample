@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<meta name="format-detection" content="telephone=no"/>
+	<link rel="stylesheet" type="text/css" href="res/css/mobile-angular-ui-base.css"/>
+	<link rel="stylesheet" href="res/css/app.css" />
+	<link rel="stylesheet" href="res/css/style.css"/>
+	<meta name="msapplication-tap-highlight" content="no"/>
+	<title>Sample</title>
+</head>
+<body>
+<div class="app" ng-controller="AppCtrl">
+	<!-- Navbars -->
+	<header class="navbar navbar-app navbar-absolute-top">
+		<!--menu-->
+		<div ng-include="'partials/menu.html'"></div>
+		<h1 class="logo" yield-to="title">
+			<a ng-href="#/">원룸넷</a>
+		</h1>
+		<div yield-to="leftNavBtn">
+			<a href="" class="icon-menu menu" toggle="toggle" target="menu"></a>
+		</div>
+		<div yield-to="rightNavBtn">
+			<a href="" class="icon-new"></a>
+		</div>
+	</header>
+	<!-- App Body -->
+	<div class="app-body" ng-class="{loading: pageLoading}">
+		<div ng-show="pageLoading" class="app-content-loading">
+			<i class="fa fa-spinner fa-spin loading-spinner"></i>
+		</div>
+		<div ng-view class="app-content" ng-hide="pageLoading"></div>
+	</div>
+</div>
+<script type="text/javascript" src="bower_components/requirejs/require.js" data-main="js/index"></script>
+</body>
+</html>

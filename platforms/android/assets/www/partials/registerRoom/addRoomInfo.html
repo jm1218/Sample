@@ -1,0 +1,206 @@
+<!--header-->
+<div content-for="title">
+	<a ng-href="/">방등록</a>
+</div>
+<div content-for="leftNavBtn">
+	<a href="" class="icon-back" ng-back></a>
+</div>
+<div content-for="rightNavBtn">
+</div>
+
+<!--content-->
+<div class="container scrollable" ng-controller="AddRoomInfoCtrl">
+	<div ng-include="'partials/popup/optionList.html'"></div>
+	<div class="cont-wrap scrollable-content">
+		<ul class="form">
+			<li>
+				<h3 class="tit">소재지</h3>
+
+				<div>
+					<div>
+						<div class="sel-box w140">
+							<a href="" class="sel"><span>시/도</span><span class="btn-more"></span></a>
+							<ul>
+								<li><a href="">서울특별시</a></li>
+								<li><a href="">서울특별시</a></li>
+								<li><a href="">서울특별시</a></li>
+								<li><a href="">서울특별시</a></li>
+							</ul>
+						</div>
+						<div class="sel-box w140 marL6">
+							<a href="" class="sel"><span>구/군/시</span><span class="btn-more"></span></a>
+							<ul>
+								<li><a href=""></a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="marT15">
+						<div class="sel-box w140">
+							<a href="" class="sel"><span>동/면/읍</span><span class="btn-more"></span></a>
+							<ul>
+								<li><a href=""></a></li>
+							</ul>
+						</div>
+						<input type="text" class="inp-w105 marL6"/>
+						<span class="marL6">번지</span>
+					</div>
+					<div class="marT30 btn-area">
+						<a href="" class="btn btn-gray">위치확인하기</a>
+					</div>
+					<div class="marT15 bor-c5"><img src="res/img/map-01.jpg"/></div>
+					<!-- 지도 넣는 곳 -->
+				</div>
+			</li>
+			<li>
+				<h3 class="tit">인근 지하철역</h3>
+
+				<div>
+					<div><input type="text" class="inp-w100per" placeholder="지하철 역명을 검색하세요"/></div>
+					<div class="marT15 positionR">
+						<div class=" marR67">
+							<div class="inp-w100per">서울대입구역</div>
+						</div>
+						<a href="" class="btn-gray">추가</a>
+					</div>
+					<div class="marT15  marR67">
+						<div class="inp-w100per">봉천역</div>
+					</div>
+				</div>
+			</li>
+			<li class="title">기본정보</li>
+			<li>
+				<h3 class="tit">거래종류<span>(복수선택 가능)</span></h3>
+
+				<div>
+					<div><span class="check first on">월세</span><span class="check">전세</span></div>
+					<div class="marT15"><input type="text" class="inp-w140" placeholder="보증금 (만원)"/><input type="text"
+					                                                                                       class="inp-w140 marL10"
+					                                                                                       placeholder="보증금 (만원)"/>
+					</div>
+					<div class="marT15"><input type="text" class="inp-w140" placeholder="월세 (만원)"/></div>
+				</div>
+			</li>
+			<li>
+				<h3 class="tit">대표가격 선택</h3>
+
+				<div><span class="check first on">월세</span><span class="check">전세</span></div>
+			</li>
+			<li>
+				<h3 class="tit">방구조</h3>
+
+				<div>
+					<div>
+						<div class="sel-box">
+							<a href="" class="sel"><span>목록</span><span class="btn-more"></span></a>
+							<ul>
+								<li><a href="">원룸(오픈형)</a></li>
+								<li><a href="">원룸(복층형)</a></li>
+								<li><a href="">투룸</a></li>
+								<li><a href="">쓰리룸</a></li>
+								<li><a href="">옥탑방</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="marT25 over-hidden">
+						<div class="area-w140">
+							<p class="sub-tit">건물 층수</p>
+							<input type="text" class="inp-w140"/>
+						</div>
+						<div class="area-w140 marL10">
+							<p class="sub-tit">건물 층수</p>
+							<input type="text" class="inp-w140"/>
+						</div>
+					</div>
+					<div class="marT25 over-hidden">
+						<div class="area-w125">
+							<p class="sub-tit">전용면적 (P)</p>
+							<input type="text" class="inp-w125"/>
+						</div>
+						<div class="icon-arrow"></div>
+						<div class="area-w125">
+							<p class="sub-tit">전용면적 (m²)</p>
+							<input type="text" class="inp-w125"/>
+						</div>
+					</div>
+				</div>
+			</li>
+			<li class="title">추가정보</li>
+			<li>
+				<h3 class="tit">옵션</h3>
+
+				<div class="positionR">
+					<div class=" marR91">
+						<div class="inp-w100per">싱크대/냉장고/가스레인지</div>
+					</div>
+					<a href="" class="btn-gray" ng-click="toggle('option','on')">옵션목록</a>
+				</div>
+			</li>
+			<li>
+				<h3 class="tit">관리비 (만원)</h3>
+
+				<div><input type="text" class="inp-w100per"/></div>
+			</li>
+			<li>
+				<h3 class="tit">관리비 포함내역</h3>
+
+				<div class="positionR">
+					<div class=" marR91">
+						<div class="inp-w100per">전기세</div>
+					</div>
+					<a href="" class="btn-gray" ng-click="toggle('fee','on')">포함목록</a>
+				</div>
+			</li>
+			<li>
+				<h3 class="tit">입주 가능일</h3>
+
+				<div><input type="text" class="inp-w100per"/></div>
+			</li>
+			<li>
+				<h3 class="tit">주차공간</h3>
+
+				<div><span class="radio on">있음</span><span class="radio">없음</span></div>
+			</li>
+			<li>
+				<h3 class="tit">엘리베이터</h3>
+
+				<div><span class="radio on">있음</span><span class="radio">없음</span></div>
+			</li>
+			<li class="title">방설명</li>
+			<li>
+				<h3 class="tit">제목 (5자 이상)</h3>
+
+				<div><input type="text" class="inp-w100per"/></div>
+			</li>
+			<li>
+				<h3 class="tit">상세설명 (50자 이상)</h3>
+
+				<div><textarea class="txt-w100per"></textarea></div>
+			</li>
+			<li>
+				<h3 class="tit">담당중개사 설정</h3>
+
+				<div>
+					<div class="sel-box">
+						<a href="" class="sel"><span>담당중개사</span><span class="btn-more"></span></a>
+						<ul>
+							<li><a href="">김길동</a></li>
+							<li><a href="">김원중</a></li>
+							<li><a href="">안정환</a></li>
+							<li><a href="">윤후</a></li>
+							<li><a href="">홍길동</a></li>
+						</ul>
+					</div>
+				</div>
+			</li>
+			<li class="title">추가정보</li>
+			<li>
+				<h3 class="tit">사진 수: 0장 </h3>
+
+				<div class="btn-area"><a ng-href="#/registerRoom/addPhoto" class="btn btn-gray">사진추가</a></div>
+			</li>
+		</ul>
+		<div class="btn-area">
+			<a href="" class="btn"><span class="icon-room">방 등록</span></a>
+		</div>
+	</div>
+</div>
