@@ -36,6 +36,10 @@ define(['angular-config'], function (app) {
 				templateUrl: 'partials/registerRoom/addPhoto.html',
 				resolve: resolvePage(['controllers/registerRoom/AddPhotoCtrl'])
 			})
+			.when('/carousels/carouselTest', {
+				templateUrl: 'partials/carousels/carouselTest.html',
+				resolve: resolvePage(['controllers/carousels/CarouselTestCtrl', 'directives/carouselExampleItem'])
+			})
 
 			.otherwise({redirectTo: '/main'});
 	};

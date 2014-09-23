@@ -7031,7 +7031,7 @@ form .panel-body {
 .carousel,
 .carousel-inner,
 .carousel-inner > .item {
-	height: 100%;
+	/*height: 100%;*/
 	max-width: 100%;
 	text-align: center;
 }

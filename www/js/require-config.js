@@ -12,13 +12,17 @@ requirejs.config({
 	paths: {
 		angular : '../bower_components/angular/angular',
 		ngRoute : '../bower_components/angular-route/angular-route',
-		mobileUi : '../bower_components/mobile-angular-ui/mobile-angular-ui'
+		mobileUi : '../bower_components/mobile-angular-ui/mobile-angular-ui',
+		ngTouch : '../bower_components/angular-touch/angular-touch'
 	},
 	shim : {
 		ngRoute : {
 			deps : ['angular']
 		},
 		mobileUi : {
+			deps : ['angular']
+		},
+		ngTouch : {
 			deps : ['angular']
 		}
 	}
