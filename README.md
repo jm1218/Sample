@@ -1,4 +1,2 @@
 Sample
 ======
-
-initial commit
