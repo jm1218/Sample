@@ -16,7 +16,13 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-define(['../cordova'], function () {
+requirejs({
+	waitSeconds : 120, //make sure it is enough to load all gmaps scripts
+	paths : {
+		async : '../bower_components/requirejs-plugins/src/async' //alias to plugin
+	}
+});
+requirejs(['../cordova', 'async!http://maps.googleapis.com/maps/api/js?libraries=weather,geometry,visualization&sensor=false'], function () {
 	var isAndroid = navigator.userAgent.indexOf('Android') !== -1;
 	if(isAndroid) {
 		document.addEventListener('deviceready', function () {

@@ -1,7 +1,13 @@
 /**
  * Created by Administrator on 2014-08-29.
  */
-define(['angular', 'ngRoute', 'mobileUi', 'ngTouch', 'ngGoogleMap'], function () {
+define([
+	'angular',
+	'ngRoute',
+	'mobileUi',
+	'ngTouch',
+	'ngGoogleMap'
+], function () {
 	var app = angular.module('app', ['ngRoute', 'mobile-angular-ui', 'ngTouch', 'google-maps'])
 		.config(['$controllerProvider', '$compileProvider', '$filterProvider', '$provide', '$httpProvider', configFunc]);
 	//app config

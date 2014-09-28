@@ -3,27 +3,31 @@
  */
 define(function () {
 	angular.module('app').controller('MainCtrl', controller);
-	function controller($scope) {
-		$scope.currentLocation = {
-			latitude: 37.554673,
-			longitude: 126.970698
-		};
-
-		if (navigator.geolocation) {
-			navigator.geolocation.getCurrentPosition(onSuccess, onError);
-		}
-
-		$scope.map = {center: $scope.currentLocation, zoom: 13 };
+	function controller($scope, $timeout) {
+		console.log('call main controller!!');
+		$scope.map = {center: {latitude : 0, longitude : 0}, zoom: 16};
 		$scope.options = {scrollwheel: true};
 
-		function onSuccess(position) {
-			$scope.currentLocation.latitude = position.coords.latitude;
-			$scope.currentLocation.longitude = position.coords.longitude;
-		}
+		var onSuccess = function(position) {
+			console.log('call getCurrentPositon!!');
+			$scope.map.center = {latitude : position.coords.latitude, longitude : position.coords.longitude};
+		};
 
-		function onError(err) {
+		var onError = function(err) {
 			console.log(err);
-		}
+		};
+
+		$scope.$on('mapInitialized', function(event, map) {
+			console.log('is map init??');
+		});
+
+		$timeout(function () {
+			if (navigator.geolocation) {
+				navigator.geolocation.getCurrentPosition(onSuccess, onError);
+			}
+		}, 100);
 	}
+
+	//https://github.com/allenhwkim/angularjs-google-maps <-- 요기에 다있다
 });
 
